@@ -1,0 +1,227 @@
+$headerImageTitle : 'Cabin Sketch', cursive;
+$headerDescription : 'Yellowtail', cursive;
+
+
+
+.home {
+    h1.site-title {
+        margin-bottom: 0;
+    }
+    .site-branding{
+        padding-bottom:0;
+    }
+    .homePageBG {
+        background-image: url('http://localhost/daniellesblog/wp-content/uploads/2017/06/mainbg-1.jpg');
+    }
+    .header-colorBG {
+        background-color: $primary-color;
+    }
+    
+    @include breakpoint(medium) {
+        .homePageBG {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+            height: 680px;
+        }
+        .header-colorBG {
+            background-color: rgba(0,0,0,0);
+        }
+        .top-bar, .top-bar ul {
+            background-color: rgba(0,0,0,0);
+            .submenu {
+                background-color: rgba(0,0,0,0.25);
+            }
+        }
+    }
+}
+
+.screen-reader-text {
+    display: none;
+}
+
+.separator::after {
+    content: "";
+    background-image: url(../img/separator.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: block;
+    margin: 0 auto;
+    height: rem-calc(10);
+    width: rem-calc(50);
+    margin-bottom: rem-calc(20);
+}
+
+header {
+    .header-colorBG {
+        background-color: $primary-color;
+    }
+    .site-branding {
+        padding: rem-calc(20 0);
+
+        h1.site-title {
+            font-family: $headerImageTitle;
+        }
+
+        p.site-description {
+            font-family: $headerDescription;
+            font-size: rem-calc(40);
+            border-bottom: 1px solid $white;
+            display: inline-block;
+            line-height: rem-calc(37);
+        }
+    }
+    
+    .header-image {
+        height: rem-calc(376);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        .site-branding {
+            padding-top: rem-calc(20 0);
+        }
+    }
+}
+
+.top-bar {
+    
+     > span {
+         padding:rem-calc(10);
+         display: block;
+         text-align: right;
+     }
+     button.menu-icon {
+         @include hamburger($white, $white, 40px, 30px, 5px, 3);
+         vertical-align: right !important;
+     }
+     ul {
+        @include menu-direction(vertical);
+        @include breakpoint(medium) {
+                @include menu-direction(horizontal);
+        }
+     }
+    a{
+        color: $white;
+        text-align: center;
+        font-weight: bold;
+        padding: rem-calc(20 0);
+    }
+    li{
+        transition: all .25s ease-in-out;
+        &:hover {
+            background-color: darken($primary-color, 10);
+        }
+    }
+
+}
+.menu-item {
+    width:100px;
+}
+
+/*** Orbit for Posts Page ***/
+
+.orbit {
+    padding-bottom: rem-calc(60);
+}
+
+.no-js [data-responsive-toggle] {
+  display: none;
+}
+
+/*** Content ***/
+
+#content {
+    margin-top:rem-calc(20);
+}
+
+/*** Content Area Blog ***/
+h2.latest-entries {
+    font-size: rem-calc(30);
+}
+.content-area {
+    h2 {
+        a{
+            color: $black;
+        }
+    }
+    .entry-meta {
+        margin-bottom: rem-calc(15);
+        a {
+            color: $black;
+        }
+    }
+    article {
+        margin-bottom: rem-calc(20);
+    }
+    .button {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+/*** Sidebar Widget ***/
+.widget_blog_entries {
+    margin-top: rem-calc(20);
+    ul{
+        li{
+            margin-bottom: rem-calc(20);
+        }
+    }
+    h4.latest-post {
+        font-size: rem-calc(22);
+    }
+}
+
+/*** Footer ***/
+
+footer .site-info {
+    background-color: $black;
+    color: $white;
+    padding: rem-calc(20 0);
+    ul{
+        margin: rem-calc(20 0); 
+        li{
+            margin: 0 auto;
+        }
+    }
+    a{
+      color: #ccc;  
+      font-weight: bold;
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+#social-menu {
+    margin-top: 0;
+    li {
+        a{
+            font-family: foundation-icons;
+            font-weight: normal;
+            color: #ccc;  
+            &:hover {
+                color: $white;
+            }
+            &:before {
+                font-size: rem-calc(50);
+                display: block;
+            }
+            &[href*="facebook.com"]:before {
+                content:"\f1c4";
+            }
+            &[href*="twitter.com"]:before {
+                content:"\f1e4";
+            }
+            &[href*="instagram.com"]:before {
+                content:"\f1cd";
+            }
+        }
+    }
+}
+
+
+
+
+
+
